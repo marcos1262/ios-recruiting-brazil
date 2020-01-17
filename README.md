@@ -1,4 +1,6 @@
 # Moov
+[![Build Status](https://app.bitrise.io/app/643097665356df3a/status.svg?token=NS0TzdYvSEh7aDMec-PrzQ)](https://app.bitrise.io/app/643097665356df3a)
+<img src="https://img.shields.io/badge/Swift-5.1-orange.svg" />
 
 This project was created for submitting on Concrete Recruit and to show how is the quality of my code at 2020 beginning.
 
