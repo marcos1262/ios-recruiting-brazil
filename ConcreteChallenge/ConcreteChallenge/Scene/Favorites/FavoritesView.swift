@@ -28,6 +28,13 @@ class FavoritesView: UIView, ViewCode {
         setup()
     }
 
+    func setup() {
+        setupSubviews()
+        setupLayout()
+
+        emptyView.descriptionLabel.text = "No favorites\nsaved yet :("
+    }
+
     func setupSubviews() {
         addSubview(tableView)
         addSubview(loadingView)

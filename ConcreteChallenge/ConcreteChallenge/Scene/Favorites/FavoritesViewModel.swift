@@ -52,6 +52,11 @@ class FavoritesViewModel: ViewModel {
         showMovieDetail?(model[index].model)
     }
 
+    func unfavorite(at index: Int) {
+        model.remove(at: index)
+        showIfNotEmpty()
+    }
+
     func loadFavorites() {
         state = .loading
 
@@ -59,9 +64,17 @@ class FavoritesViewModel: ViewModel {
             let movies: [Movie] = try Movie.all()
             let results = movies.map({ MovieCellViewModel(movie: $0) })
             model = results
-            state = .show
+            showIfNotEmpty()
         } catch {
             state = .error(error)
+        }
+    }
+
+    private func showIfNotEmpty() {
+        if model.count > 0 {
+            state = .show
+        } else {
+            state = .empty
         }
     }
 }

@@ -63,6 +63,7 @@ extension FavoritesViewController: UITableViewDelegate {
             self?.tableViewDataSource.viewModels[indexPath.item].favorite()
             self?.tableViewDataSource.viewModels.remove(at: indexPath.item)
             self?.favoritesView.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self?.viewModel.unfavorite(at: indexPath.item)
             completion(true)
         })
             .set(\.image, to: UIImage.Favorite.fullIcon)
